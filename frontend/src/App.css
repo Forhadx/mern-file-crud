@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+}
+
+.image-upload__preview{
+  width: 20rem;
+  height: 20rem;
+  background-size: cover;
+  margin: auto;
+   box-sizing: border-box;
+  border: 2px solid green;
+}
+
+.image-upload__preview img{
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.products{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 3rem 5rem;
+
+}
+
+
+.product-details{
+  width: 20rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem .5rem;
+  margin: 1.5rem;
+  box-shadow: .2rem .2rem .6rem .2rem gray;
+}
+
+.product-details img{
+  width: 100%;
+  height: 70%;
+  background-size: cover;
+}
+
+.product-info h2,p{
+  margin: 0;
+  padding: 0;
+}
+
+.product-btns button{
+  width: 33.33%;
+  padding: .3rem 0;
+  background-color: purple;
+  color: white;
+}
