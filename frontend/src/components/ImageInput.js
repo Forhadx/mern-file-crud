@@ -42,7 +42,7 @@ const ImageUpload = React.memo((props) => {
   };
 
   return (
-    <div className="form-control">
+    <div className="form-col-2">
       <input
         ref={filePickerRef}
         style={{ display: "none" }}
@@ -52,9 +52,8 @@ const ImageUpload = React.memo((props) => {
       />
       <div className="image-upload__preview">
         {previewUrl && <img src={previewUrl} alt="Preview" />}
-        {!previewUrl && <p>Please pick an image.</p>}
       </div>
-      <button type="button" onClick={pickImageHandler}>
+      <button type="button" onClick={pickImageHandler} className="btn-pick">
         PICK IMAGE
       </button>
     </div>

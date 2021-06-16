@@ -26,7 +26,7 @@ const Products = (props) => {
             <div key={p._id} className="product-details">
               <div className="product-info">
                 <h2>{p.title}</h2>
-                <p>{p.price}</p>
+                <p>{p.price} $</p>
               </div>
               <img
                 src={`http://localhost:5000/${p.image_path}`}
