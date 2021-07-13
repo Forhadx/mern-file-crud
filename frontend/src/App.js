@@ -11,8 +11,9 @@ const App = () => {
   const [isEdit, setIsEdit] = useState(false);
 
   useEffect(() => {
+    console.log("url: ", process.env.REACT_APP_BASE_URL);
     axios
-      .get("http://localhost:5000/store")
+      .get(process.env.REACT_APP_BASE_URL + "/store")
       .then((res) => {
         console.log("all products: ", res);
         setProducts(res.data.products);
@@ -23,7 +24,7 @@ const App = () => {
   const addProductsHandler = (formData) => {
     console.log("add file ", formData);
     axios
-      .post("http://localhost:5000/store", formData)
+      .post(process.env.REACT_APP_BASE_URL + "/store", formData)
       .then((res) => {
         setProducts([...products, res.data.product]);
         console.log("res: ", res);
@@ -41,7 +42,7 @@ const App = () => {
   const updateHandler = (id, data) => {
     console.log("data..", data);
     axios
-      .patch(`http://localhost:5000/store/${id}`, data)
+      .patch(process.env.REACT_APP_BASE_URL + `/store/${id}`, data)
       .then((res) => {
         setIsEdit(false);
       })
@@ -50,7 +51,7 @@ const App = () => {
 
   const deleteHandler = (id) => {
     axios
-      .delete(`http://localhost:5000/store/${id}`)
+      .delete(process.env.REACT_APP_BASE_URL + `/store/${id}`)
       .then((result) => {
         setProducts((oldProducts) => oldProducts.filter((p) => p._id !== id));
       })

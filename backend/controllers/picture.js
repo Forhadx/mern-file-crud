@@ -65,7 +65,7 @@ exports.deleteProducts = (req, res, next) => {
   Product.findById(pId)
     .then((prod) => {
       clearImage(prod.image_path);
-      return Product.findByIdAndRemove(pId);
+      return Product.findByIdAndDelete(pId);
     })
     .then((result) => {
       res.json({ message: "Product is deleted!" });
@@ -76,7 +76,7 @@ exports.deleteProducts = (req, res, next) => {
 const clearImage = (ImgPath) => {
   ImgPath = path.join(__dirname, "..", ImgPath);
   fs.unlink(ImgPath, (err) => {
-    console.log(err);
+    console.log('delete done! ',err);
   });
 };
 

@@ -1,0 +1,7 @@
+{
+    "env":{
+        "DB_USER": "forhad12",
+        "DB_PASSWORD": "forhad123456",
+        "MONGODB_NAME": "file_upload_download"
+    }
+}

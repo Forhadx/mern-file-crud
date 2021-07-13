@@ -6,7 +6,7 @@ const Products = (props) => {
   const clickHandler = async (prod) => {
     try {
       const result = await axios.get(
-        `http://localhost:5000/download/${prod._id}`,
+        process.env.REACT_APP_BASE_URL + `/download/${prod._id}`,
         {
           responseType: "blob",
         }
@@ -29,11 +29,11 @@ const Products = (props) => {
                 <p>{p.price} $</p>
               </div>
               <img
-                src={`http://localhost:5000/${p.image_path}`}
+                src={process.env.REACT_APP_BASE_URL + `/${p.image_path}`}
                 alt={p.title}
               />
               <div className="product-btns">
-                <button onClick={()=>props.updateHandler(p)}>Update</button>
+                <button onClick={() => props.updateHandler(p)}>Update</button>
                 <button onClick={() => props.deleteHandler(p._id)}>
                   Delete
                 </button>
